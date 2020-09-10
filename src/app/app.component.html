@@ -1,0 +1,24 @@
+<div class="container w-50 mt-5 text-center">
+  <div class="display-3 m-3 text-white text-center">
+    Word Limit {{ limit }}
+  </div>
+
+  <input type="range" class="form-control-range"
+  min="0"
+  max="10"
+  value="{{ limit }}"
+  (change) = "handelSlideChange($event.target.value)"/>
+
+  <div class="container">
+    <button class="btn btn-primary" (click) = "generate()">Generate Words</button>
+
+    <button class="btn btn-info" (click) = "randomLimitGenerator()">Random Limit</button>
+  </div>
+
+  <div *ngIf="words" class="card card-body">
+    <p class="display-4">
+      {{ words}}
+    </p>
+  </div>
+</div>
+
